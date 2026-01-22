@@ -4,94 +4,305 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmollAI - Tu IA Local</title>
+    <title>SmollAI - IA Local y Privada en Android</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         :root {
-            --bg: #0F172A;
-            --accent: #6366F1;
-            --gradient: linear-gradient(135deg, #6366F1 0%, #D946EF 100%);
-            --text: #F1F5F9;
+            --bg-dark: #0F172A;
+            --bg-card: #1E293B;
+            --accent-primary: #6366F1;
+            --accent-secondary: #D946EF;
+            --accent-success: #10B981;
+            --text-primary: #F1F5F9;
+            --text-secondary: #94A3B8;
+            --text-muted: #64748B;
         }
 
         body {
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
             text-align: center;
-        }
-
-        .container {
-            max-width: 800px;
             padding: 2rem;
+            position: relative;
         }
 
         .logo {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             margin-bottom: 2rem;
-            filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.5));
+            filter: drop-shadow(0 0 40px rgba(99, 102, 241, 0.6));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
 
         h1 {
-            font-size: 3.5rem;
-            margin: 0;
-            background: var(--gradient);
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #6366F1 0%, #D946EF 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+        }
+
+        .download-btn {
+            padding: 1.25rem 3rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: white;
+            background: linear-gradient(135deg, #6366F1 0%, #D946EF 100%);
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.4);
+            animation: fadeInUp 0.8s ease 0.4s backwards;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(217, 70, 239, 0.5);
+        }
+
+        .download-btn::before {
+            content: "📥";
+            font-size: 1.5rem;
+        }
+
+        .features {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #6366F1 0%, #D946EF 100%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        p {
-            font-size: 1.25rem;
-            color: #94A3B8;
-            margin: 1.5rem 0 3rem;
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
         }
 
-        .btn {
-            padding: 1rem 2.5rem;
-            font-size: 1.25rem;
+        .feature-card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(99, 102, 241, 0.6);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .specs {
+            background: var(--bg-card);
+            padding: 3rem 2rem;
+            margin: 3rem 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .specs h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: var(--accent-success);
+        }
+
+        .specs ul {
+            list-style: none;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .specs li {
+            padding: 0.75rem 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .specs li::before {
+            content: "✓";
+            color: var(--accent-success);
             font-weight: bold;
-            color: white;
-            background: var(--gradient);
-            border: none;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: transform 0.2s, box-shadow 0.2s;
-            cursor: pointer;
-            display: inline-block;
-        }
-
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(217, 70, 239, 0.3);
+            font-size: 1.5rem;
         }
 
         .footer {
-            margin-top: 5rem;
-            font-size: 0.9rem;
-            color: #64748B;
+            padding: 3rem 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(99, 102, 241, 0.1);
+        }
+
+        .footer a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: var(--accent-secondary);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .download-btn {
+                padding: 1rem 2rem;
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <img src="logo.png" alt="SmollAI Logo" class="logo"
-            onerror="this.src='https://raw.githubusercontent.com/[USER]/SmollAI/main/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png'">
+    <section class="hero">
+        <img src="SmollAI.jpeg" alt="SmollAI Logo" class="logo">
         <h1>SmollAI</h1>
-        <p>Potente IA local en tu bolsillo. Privacidad absoluta, sin internet.</p>
-        <a href="smollai-release.apk" class="btn">Descargar APK (Beta)</a>
-        <div class="footer">
-            © 2026 SmollAI IA. Basado en llama.cpp.
+        <p class="subtitle">
+            🧠 IA local y privada en tu Android<br>
+            Sin internet. Sin seguimiento. 100% tuya.
+        </p>
+        <a href="smollai-release.apk" class="download-btn" download>
+            Descargar APK v1.0
+        </a>
+    </section>
+
+    <section class="features">
+        <h2>¿Por qué SmollAI?</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Privacidad Total</h3>
+                <p>Tus conversaciones nunca salen de tu dispositivo. Sin servidores, sin tracking, sin compromisos.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Sin Internet</h3>
+                <p>Funciona 100% offline. Lleva tu IA a cualquier lugar, incluso sin conexión.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3>Modelos Potentes</h3>
+                <p>Basado en llama.cpp, ejecuta modelos de IA de última generación directamente en tu móvil.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Gratis y Open Source</h3>
+                <p>Sin suscripciones, sin pagos ocultos. Código abierto y transparente.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>Interfaz Moderna</h3>
+                <p>Diseño limpio e intuitivo pensado para jóvenes y productividad.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔧</div>
+                <h3>Personalizable</h3>
+                <p>Descarga y cambia modelos según tus necesidades. Tú tienes el control.</p>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <section class="specs">
+        <h3>Requisitos del Sistema</h3>
+        <ul>
+            <li>Android 8.0 (API 26) o superior</li>
+            <li>Arquitectura ARM64 (arm64-v8a)</li>
+            <li>Mínimo 4 GB de RAM recomendado</li>
+            <li>Al menos 2 GB de almacenamiento libre</li>
+            <li>Compatible con dispositivos Android 14+ (16KB page-size)</li>
+        </ul>
+    </section>
+
+    <footer class="footer">
+        <p>
+            © 2026 SmollAI · Powered by <a href="https://github.com/ggerganov/llama.cpp" target="_blank">llama.cpp</a>
+        </p>
+        <p style="margin-top: 1rem;">
+            <a href="https://github.com/kmz44/SmollAI" target="_blank">Ver en GitHub</a>
+        </p>
+    </footer>
 </body>
 
 </html>
