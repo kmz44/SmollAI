@@ -37,7 +37,7 @@ android {
         }
 
         create("release") {
-            storeFile = file(keystoreProperties.getProperty("storeFile", "../smollai_release.jks"))
+            storeFile = file("${rootProject.projectDir}/" + keystoreProperties.getProperty("storeFile", "smollai_release.jks"))
             storePassword = keystoreProperties.getProperty("storePassword")
             keyAlias = keystoreProperties.getProperty("keyAlias")
             keyPassword = keystoreProperties.getProperty("keyPassword")
@@ -51,7 +51,8 @@ android {
             signingConfig = signingConfigs.getByName("release")
         }
         getByName("debug") {
-            applicationIdSuffix = ".debug"
+            // Removed applicationIdSuffix to avoid package conflicts
+            signingConfig = signingConfigs.getByName("release")
         }
     }
 
