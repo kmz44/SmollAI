@@ -1,0 +1,126 @@
+> Task :app:objectboxPrepareBuild UP-TO-DATE
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :smollai:preBuild UP-TO-DATE
+> Task :smollai:preDebugBuild UP-TO-DATE
+> Task :smollai:writeDebugAarMetadata UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :smollai:generateDebugResValues UP-TO-DATE
+> Task :smollai:generateDebugResources UP-TO-DATE
+> Task :smollai:packageDebugResources UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :smollai:extractDeepLinksDebug UP-TO-DATE
+> Task :smollai:processDebugManifest UP-TO-DATE
+> Task :app:processDebugMainManifest UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+> Task :smollai:compileDebugLibraryResources UP-TO-DATE
+> Task :smollai:parseDebugLocalResources UP-TO-DATE
+> Task :smollai:generateDebugRFile UP-TO-DATE
+> Task :smollai:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :smollai:compileDebugKotlin UP-TO-DATE
+> Task :smollai:javaPreCompileDebug UP-TO-DATE
+> Task :smollai:compileDebugJavaWithJavac NO-SOURCE
+> Task :smollai:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :app:mergeDebugShaders UP-TO-DATE
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :smollai:mergeDebugShaders UP-TO-DATE
+> Task :smollai:compileDebugShaders NO-SOURCE
+> Task :smollai:generateDebugAssets UP-TO-DATE
+> Task :smollai:packageDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets UP-TO-DATE
+> Task :app:compressDebugAssets UP-TO-DATE
+> Task :smollai:processDebugJavaRes UP-TO-DATE
+> Task :app:checkDebugDuplicateClasses UP-TO-DATE
+> Task :app:desugarDebugFileDependencies UP-TO-DATE
+> Task :app:mergeExtDexDebug UP-TO-DATE
+> Task :smollai:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :smollai:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :app:mergeLibDexDebug UP-TO-DATE
+> Task :app:mergeDebugJniLibFolders UP-TO-DATE
+> Task :smollai:preReleaseBuild UP-TO-DATE
+> Task :smollai:configureCMakeRelease[arm64-v8a]
+> Task :smollai:buildCMakeRelease[arm64-v8a]
+> Task :smollai:configureCMakeRelease[armeabi-v7a]
+> Task :smollai:buildCMakeRelease[armeabi-v7a]
+> Task :smollai:configureCMakeRelease[x86]
+> Task :smollai:buildCMakeRelease[x86]
+> Task :smollai:configureCMakeRelease[x86_64]
+> Task :smollai:buildCMakeRelease[x86_64]
+> Task :smollai:mergeDebugJniLibFolders UP-TO-DATE
+> Task :smollai:mergeDebugNativeLibs UP-TO-DATE
+> Task :smollai:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :app:validateSigningDebug UP-TO-DATE
+> Task :app:writeDebugAppMetadata UP-TO-DATE
+> Task :app:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :smollai:stripDebugDebugSymbols UP-TO-DATE
+> Task :smollai:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :smollai:extractDebugAnnotations UP-TO-DATE
+> Task :smollai:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :smollai:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :smollai:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :smollai:prepareDebugArtProfile UP-TO-DATE
+> Task :smollai:prepareLintJarForPublish UP-TO-DATE
+> Task :smollai:mergeDebugJavaResource UP-TO-DATE
+> Task :smollai:syncDebugLibJars UP-TO-DATE
+> Task :smollai:bundleDebugAar UP-TO-DATE
+> Task :smollai:assembleDebug UP-TO-DATE
+> Task :app:processDebugResources FAILED
+> Task :app:mergeDebugNativeLibs
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:processDebugResources'.
+> A failure occurred while executing com.android.build.gradle.internal.res.LinkApplicationAndroidResourcesTask$TaskAction
+   > Android resource linking failed
+     ERROR: C:\cmabios-main\app\src\main\res\layout\activity_welcome.xml:72: AAPT: error: resource style/smollaiTextTitle (aka io.smollai.smollaiandroid:style/smollaiTextTitle) not found.
+         
+     ERROR: C:\cmabios-main\app\src\main\res\layout\activity_welcome.xml:82: AAPT: error: resource style/smollaiTextSubtitle (aka io.smollai.smollaiandroid:style/smollaiTextSubtitle) not found.
+         
+     ERROR: C:\cmabios-main\app\src\main\res\layout\activity_welcome.xml:92: AAPT: error: resource style/smollaiTextTitle (aka io.smollai.smollaiandroid:style/smollaiTextTitle) not found.
+         
+     ERROR: C:\cmabios-main\app\src\main\res\layout\activity_welcome.xml:104: AAPT: error: resource style/smollaiCardStyle (aka io.smollai.smollaiandroid:style/smollaiCardStyle) not found.
+         
+     ERROR: C:\cmabios-main\app\src\main\res\layout\activity_welcome.xml:118: AAPT: error: resource style/smollaiTextTitle (aka io.smollai.smollaiandroid:style/smollaiTextTitle) not found.
+         
+     ERROR: C:\cmabios-main\app\src\main\res\layout\activity_welcome.xml:125: AAPT: error: resource style/smollaiTextBody (aka io.smollai.smollaiandroid:style/smollaiTextBody) not found.
+         
+     ERROR: C:\cmabios-main\app\src\main\res\layout\activity_welcome.xml:135: AAPT: error: resource style/smollaiButtonPrimary (aka io.smollai.smollaiandroid:style/smollaiButtonPrimary) not found.
+         
+     ERROR: C:\cmabios-main\app\src\main\res\layout\activity_welcome.xml:149: AAPT: error: resource style/smollaiCardStyle (aka io.smollai.smollaiandroid:style/smollaiCardStyle) not found.
+         
+     ERROR: C:\cmabios-main\app\src\main\res\layout\activity_welcome.xml:163: AAPT: error: resource style/smollaiTextTitle (aka io.smollai.smollaiandroid:style/smollaiTextTitle) not found.
+         
+     ERROR: C:\cmabios-main\app\src\main\res\layout\activity_welcome.xml:170: AAPT: error: resource style/smollaiTextBody (aka io.smollai.smollaiandroid:style/smollaiTextBody) not found.
+         
+     ERROR: C:\cmabios-main\app\src\main\res\layout\activity_welcome.xml:182: AAPT: error: resource style/smollaiButtonSecondary (aka io.smollai.smollaiandroid:style/smollaiButtonSecondary) not found.
+         
+     ERROR: C:\cmabios-main\app\src\main\res\layout\activity_welcome.xml:197: AAPT: error: resource style/smollaiTextBody (aka io.smollai.smollaiandroid:style/smollaiTextBody) not found.
+         
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.9/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 3s
+66 actionable tasks: 10 executed, 56 up-to-date

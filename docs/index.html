@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmollAI - Tu IA Local</title>
+    <style>
+        :root {
+            --bg: #0F172A;
+            --accent: #6366F1;
+            --gradient: linear-gradient(135deg, #6366F1 0%, #D946EF 100%);
+            --text: #F1F5F9;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .logo {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 0 20px rgba(99, 102, 241, 0.5));
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            font-size: 1.25rem;
+            color: #94A3B8;
+            margin: 1.5rem 0 3rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: white;
+            background: var(--gradient);
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(217, 70, 239, 0.3);
+        }
+
+        .footer {
+            margin-top: 5rem;
+            font-size: 0.9rem;
+            color: #64748B;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="logo.png" alt="SmollAI Logo" class="logo"
+            onerror="this.src='https://raw.githubusercontent.com/[USER]/SmollAI/main/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png'">
+        <h1>SmollAI</h1>
+        <p>Potente IA local en tu bolsillo. Privacidad absoluta, sin internet.</p>
+        <a href="smollai-release.apk" class="btn">Descargar APK (Beta)</a>
+        <div class="footer">
+            © 2026 SmollAI IA. Basado en llama.cpp.
+        </div>
+    </div>
+</body>
+
+</html>
